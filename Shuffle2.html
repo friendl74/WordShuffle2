@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id="display-area"></div>
+    <input type="text" id="word-input">
+    <button id="scramble-button">Scramble</button>
+
+<script>
+
+let scrambleButton = document.getElementById("scramble-button");
+scrambleButton.addEventListener("click", scrambleWord);
+
+function scrambleWord() {
+            let word = document.getElementById("word-input").value;
+            let scramble = word.split("").sort(() => Math.random() - 0.5).join("");
+            let displayArea = document.getElementById("display-area");
+            displayArea.innerHTML = "Original Word: " + word + "<br>Scrambled Word: " + scramble;
+        }
+
+</script>
+
+
+
+</body>
+</html>

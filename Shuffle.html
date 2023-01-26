@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div id="display-area"></div>  
+
+<script>
+
+let word = prompt("Enter a word:");
+
+while (true) {
+    let scramble = scrambleWord(word);
+    displayWord(scramble);
+
+    let again = prompt("Scramble again? (y/n)");
+    if (again === "n") {
+        break;
+    }
+}
+
+function scrambleWord(word) {
+    word = word.split("").sort(() => Math.random() - 0.5).join("");
+    return word;
+}
+
+function displayWord(scramble) {
+    let displayArea = document.getElementById("display-area");
+    displayArea.innerHTML = scramble;
+}
+
+</script>
+
+
+
+</body>
+</html>
